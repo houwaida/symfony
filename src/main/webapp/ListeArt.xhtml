@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width"/>
+    </h:head>
+    <h:body>
+        <h:outputText value="La liste de projets "></h:outputText>
+        <p:dataTable var="car" value="#{projetMB.projetList}" rows="10"
+                         paginator="true"
+                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         rowsPerPageTemplate="5,10,15">
+        <p:column headerText="date creation">
+            <h:outputText value="#{car.dateCreation}" />
+        </p:column>
+ 
+        <p:column headerText="libelle">
+            <h:outputText value="#{car.libelle}" />
+        </p:column>
+ 
+        <p:column headerText="lieuRealisation">
+            <h:outputText value="#{car.lieuRealisation}" />
+        </p:column>
+            
+        <p:column headerText="telephone">
+            <h:outputText value="#{car.telephone}" />
+        </p:column>
+             <p:column headerText="assuranceDecenale">
+                 <h:outputText value="#{car.assuranceDecenale}" />
+        </p:column>
+             <p:column headerText="telephone">
+            <h:outputText value="#{car.telephone}" />
+        </p:column>
+            
+             <p:column headerText="fax">
+                 <h:outputText value="#{car.fax}" />
+        </p:column>
+             <p:column headerText="tauxProrataTva">
+                 <h:outputText value="#{car.tauxProrataTva}" />
+        </p:column>
+            
+          
+             <p:column headerText="surfaceConstruite">
+                 <h:outputText value="#{car.surfaceConstruite}" />
+        </p:column>
+            
+             <p:column headerText="nbreTranche">
+                 <h:outputText value="#{car.nbreTranche}" />
+        </p:column>
+            
+             <p:column headerText="supprimer">
+                 <h:form>
+                     <p:commandButton value="supprimer" action="#{projetMB.deleteProjet(car)}" />
+                 </h:form>
+          
+        </p:column>
+    </p:dataTable>
+    </h:body>
+</html>
